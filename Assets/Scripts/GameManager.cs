@@ -29,13 +29,15 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(increaseDifficultyInterval);
             difficulty++;
-            difficultyText.UpdateValue(difficulty);
+            if (difficultyText != null )
+                difficultyText.UpdateValue(difficulty);
         }
     }
 
     public void AddEliminatedEnemy()
     {
         enemiesEliminated++;
+        if (enemiesEliminatedText != null )
         enemiesEliminatedText.UpdateValue(enemiesEliminated);
     }
 }

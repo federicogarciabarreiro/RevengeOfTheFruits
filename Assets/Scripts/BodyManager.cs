@@ -9,16 +9,12 @@ public class BodyManager : MonoBehaviour
     private void OnEnable()
     {
         foreach (var item in types)
-        {
             item.gameObject.SetActive(false);
-        }
 
         Shuffle(types);
 
         if (types.Count > 0)
-        {
             types[0].gameObject.SetActive(true);
-        }
     }
 
     void Shuffle<T>(List<T> list)

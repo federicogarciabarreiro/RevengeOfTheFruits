@@ -4,15 +4,16 @@ using UnityEngine;
 public class UpdateText : MonoBehaviour
 {
     private TextMeshProUGUI text;
-    private string initialValue;
-    public string lastValue;
+    private string initialValue = "";
+    public string lastValue = "";
 
-    private void Awake()
+    private void OnEnable()
     {
         text = GetComponent<TextMeshProUGUI>();
-        initialValue = text.text;
-    }
 
+        if (initialValue == "")
+            initialValue = text.text;
+    }
     void Start()
     {
         UpdateValue(0);
